@@ -1,18 +1,17 @@
 const mainDiv = document.getElementById("main-div");
 navbar = document.getElementById("nav");
-console.log(mainDiv, navbar);
+const burger = document.getElementById("burger");
+sideBar = document.getElementById("side");
 
 // events//
 navbar.addEventListener("click", function (e) {
   e.preventDefault();
   hideElements();
-  console.log(e.target);
 
   if (e.target.innerHTML === "About") {
     let contentBox = mainDiv.children[0];
 
     contentBox.childNodes.forEach((childItem, ind) => {
-      console.log(ind);
       if (childItem.classList === undefined) {
         return;
       }
@@ -23,7 +22,6 @@ navbar.addEventListener("click", function (e) {
   } else if (e.target.innerHTML === "Skills") {
     let contentBox = mainDiv.children[1];
     contentBox.childNodes.forEach((childItem, ind) => {
-      console.log(ind);
       if (childItem.classList === undefined) {
         return;
       }
@@ -34,7 +32,6 @@ navbar.addEventListener("click", function (e) {
   } else if (e.target.innerHTML === "Contact Me") {
     let contentBox = mainDiv.children[2];
     contentBox.childNodes.forEach((childItem, ind) => {
-      console.log(ind);
       if (childItem.classList === undefined) {
         return;
       }
@@ -46,14 +43,35 @@ navbar.addEventListener("click", function (e) {
   return;
 });
 
+burger.addEventListener("click", (e) => {
+  e.preventDefault();
+  // sideBar.classList.toggle('closed');
+  if (sideBar.classList.contains("closed")) {
+    sideBar.classList.remove("closed");
+    sideBar.classList.add("open");
+  } else if (!sideBar.classList.contains("closed")) {
+    sideBar.classList.remove("open");
+    sideBar.classList.add("closed");
+  }
+});
+navbar.addEventListener("click", (e) => {
+  e.preventDefault();
+  // sideBar.classList.toggle('open');
+  if (sideBar.classList.contains("closed")) {
+    sideBar.classList.remove("closed");
+    sideBar.classList.add("open");
+  } else if (!sideBar.classList.contains("closed")) {
+    sideBar.classList.remove("open");
+    sideBar.classList.add("closed");
+  }
+});
+
 // functions///////
 
 function hideElements() {
   let itemArray = mainDiv.childNodes;
-  console.log(itemArray);
   itemArray.forEach((item) => {
     let child = item.childNodes;
-    console.log(child);
 
     ///////////////////
     if (item.classList === undefined) {
