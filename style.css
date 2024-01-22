@@ -286,16 +286,13 @@ h2 {
 #three {
   font-family: proximaRegular;
   height: 100vh;
-  /* padding: 0px 0px 150px; */
 
   justify-content: start;
   background: linear-gradient(#000, #0000003b), url(./images/moon.png);
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-position: 140px; */
 }
 #three .html-img {
-  /* position: fixed; */
   opacity: 0.3;
   top: 0px;
   left: 1000px;
@@ -324,14 +321,7 @@ h2 {
 #three .social a {
   color: var(--white);
 }
-/* #three img {
-  position: absolute;
-  z-index: -999;
-  bottom: -130px;
-  left: 140px;
 
-  opacity: 0.2;
-} */
 #three .description {
   font-size: 2svh;
   font-family: proximaRegular;
@@ -360,7 +350,6 @@ h2 {
   transition: all ease-in 500ms;
 
   animation: reveal 1s forwards;
-  /* transition-timing-function: cubic-bezier(0.235, 0.73, 0.46, 0.96); */
 }
 
 @keyframes reveal {
